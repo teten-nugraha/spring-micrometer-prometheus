@@ -14,8 +14,6 @@ public class Scheduler {
   private final Counter testCounter;
 
   public Scheduler(MeterRegistry meterRegistry) {
-    // Counter vs. gauge, summary vs. histogram
-    // https://prometheus.io/docs/practices/instrumentation/#counter-vs-gauge-summary-vs-histogram
     testGauge = meterRegistry.gauge("custom_gauge", new AtomicInteger(0));
     testCounter = meterRegistry.counter("custom_counter");
   }
